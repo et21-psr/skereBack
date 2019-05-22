@@ -1,3 +1,5 @@
+create database skereee;
+use skereee;
 CREATE TABLE `categorias` (
   `id_categorias` int(11) NOT NULL AUTO_INCREMENT,
   `categoria_padre` int(11) DEFAULT NULL,
@@ -5,7 +7,8 @@ CREATE TABLE `categorias` (
   `created_at` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`id_categorias`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
+
 CREATE TABLE `comentarios` (
   `idcomentarios` int(11) NOT NULL AUTO_INCREMENT,
   `texto` longtext,
@@ -17,7 +20,8 @@ CREATE TABLE `comentarios` (
   `created_at` datetime NOT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`idcomentarios`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
+
 CREATE TABLE `posteos` (
   `idposteos` int(11) NOT NULL,
   `texto` longtext,
@@ -28,7 +32,8 @@ CREATE TABLE `posteos` (
   `created_at` datetime NOT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`idposteos`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
+
 CREATE TABLE `usuario` (
   `idUsuario` int(11) NOT NULL AUTO_INCREMENT,
   `email` varchar(45) DEFAULT NULL,
@@ -41,4 +46,4 @@ CREATE TABLE `usuario` (
   `created_at` datetime NOT NULL,
   `update_at` datetime DEFAULT NULL,
   PRIMARY KEY (`idUsuario`)
-) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+);
