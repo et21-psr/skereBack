@@ -1,14 +1,14 @@
 module.exports = {
-                  
+
                    "db": {
                      "prod": {
                        "host": "localhost",
-                       "database": "futboltiki",
+                       "database": "skereee",
                        "username": "root",
                        "password": "",
                        "dialect": "mysql",
                        //"logging":  true
                      }
-                     
+
                    }
 			   }

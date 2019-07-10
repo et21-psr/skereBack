@@ -20,7 +20,7 @@ var fileConfig = require('../config/config'); // get our config file
 
  JSON.parse(process.env.npm_config_argv).cooked[1].replace('start:','');
  */
-var env = fileConfig.env;
+var env ="prod";
 var config = fileConfig.db;
 //var config    = require(path.join(__dirname, 'config.json'))[env];
 console.log("Enviroment :"+env);
