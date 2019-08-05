@@ -8,6 +8,44 @@ router.get('/', function(req, res, next) {
     res.status(200).jsonp(result);
 
   })
+  console.log('llego');
 });
+//Obtener
+router.get('/:id', function(req, res, next){
 
+  let id = req.params.id;
+  models.comentario.findOne({
+    where: {
+      id_comentario: id
+    }
+  }).then(result => {
+    if(result== null){
+      res.status(200).jsonp("no existe");
+    }
+    res.status(200).jsonp(result);
+  })
+});
+//Eliminar
+router.delete('/:id', function(req, res, next){
+
+  let id = req.params.id;
+  models.comentario.destroy({
+    where: {
+      id_comentario: id
+    }
+  }).then(result => {
+    if(result== null){
+      res.status(200).jsonp("no existe");
+    }
+    res.status(200).jsonp(result);
+  })
+});
+//Post
+router.post('/', function(req, res, next){
+  let comentario = req.body;
+  models.comentario.create(comentario).then(result => {
+    res.status(200).jsonp({status:true , response:"se creo con exito"});
+  })
+
+});
 module.exports = router;

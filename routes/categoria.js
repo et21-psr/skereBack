@@ -8,6 +8,45 @@ router.get('/', function(req, res, next) {
     res.status(200).jsonp(result);
 
   })
+  console.log('llego');
 });
+//Obetener
+router.get('/:id', function(req, res, next){
 
+  let id = req.params.id;
+  models.categoria.findOne({
+    where: {
+      id_categoria: id
+    }
+  }).then(result => {
+    if(result== null){
+      res.status(200).jsonp("no existe");
+    }
+    res.status(200).jsonp(result);
+  })
+});
+//Eliminar
+router.delete('/:id', function(req, res, next){
+
+  let id = req.params.id;
+  models.categoria.destroy({
+    where: {
+      id_categoria: id
+    }
+  }).then(result => {
+    if(result== null){
+      res.status(200).jsonp("no existe");
+    }
+    res.status(200).jsonp(result);
+  })
+});
+//Post
+router.post('/', function(req, res, next){
+  let categoria = req.body;
+
+  models.categoria.create(categoria).then(result => {
+    res.status(200).jsonp({status:true , response:"se creo con exito"});
+  })
+
+});
 module.exports = router;
