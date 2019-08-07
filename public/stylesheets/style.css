@@ -1,3 +1,4 @@
+/*
 body {
   padding: 50px;
   font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
@@ -5,4 +6,71 @@ body {
 
 a {
   color: #00B7FF;
+}
+.titulo {
+  background-color: purple;
+}
+.barra{
+  background-color: yellow;
+}
+*/
+*
+{
+	margin: 0;
+	padding: 0;
+}
+
+.clear::after
+.clearfix::after,
+article::after,
+aside::after,
+details::after,
+div::after,
+figure::after,
+footer::after,
+header::after,
+hgroup::after,
+li::after,
+nav::after,
+p::after,
+section::after,
+
+
+{
+	clear: both;
+	content: " ";
+	display: block;
+	visibility: hidden;
+}
+.wrapper
+{
+	margin: auto auto;
+	width: 980px;
+}
+
+.content
+{
+    margin-top: 10px;
+}
+
+.content .c1
+{
+
+    float: left;
+    width: 600px
+
+}
+.content .c2
+{
+
+    float: right;
+    width: 300px
+
+}
+
+.content h2
+{
+    font-size: 20px bold;
+    color: #444;
+    border-bottom: solid 1px #444;
 }

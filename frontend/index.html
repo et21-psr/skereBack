@@ -1,0 +1,50 @@
+<html>
+
+<head>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <title>Skereee</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+</head>
+
+
+
+<body>
+  <h1 class="titulo">Skereee (creacion de usuarios)</h1>
+    <div class="formulario">
+      <form id="form-login" action="" method="post" autocomplete="off">
+                          <!--A saber, el atributo for funciona como el id.-->
+                          <!--ejemplo <label for="usuario">Usuario:</label>-->
+                          <!--required es nuevo en html5, si el campo está vacío te avisa, pero cuidado, no valida la información-->
+                          <p><label >Nombre:</label></p>
+                              <p><input name="Nombre" type="text" id="Nombre" placeholder="Nombre" autofocus="" required=""></p>
+                              <p><label >Apellido:</label></p>
+                                  <p><input name="Apellido" type="text" id="Apellido" placeholder="Ingresa Apellido" autofocus="" required=""></p>
+
+                          <p><label >Correo electronico:</label></p>
+                              <p><input name="Email" type="text" id="Email" placeholder="Ingresa Email" autofocus="" required=""></p>
+
+                          <p><label>Contraseña:</label></p>
+                              <p><input name="Contrasena" type="password" id="Contrasena" placeholder="Ingresa Password" required=""></p>
+                          <p><label>Confirmar Contraseña:</label></p>
+                              <p><input name="contrasenia2" type="password" id="contrasenia2" placeholder="Ingresa Password" required=""></p>
+                          <p><label>¿Es Administrador? Si lo es ingrese su clave de administrador, de lo contrario deje la casilla en blanco</label>
+                          <p><label>Clave Administrador:</label></p>
+                              <p><input name="clave_admin" type="password" id="clave_admin" placeholder="Clave Administrador"></p>
+
+                          <p id="bot"><input type="submit" id="submit" name="submit" value="Crear" class="boton" ></p>
+                      </form></div></body>
+                      <script>
+                        //falla la 40
+                        $("#form-login").sumbit(function(event){
+                          console.log("entro");
+                          event.preventDefault();
+
+                          $.post("http://localhost:3000/usuario", {Nombre: $("#nombre").val(), Apellido: $("#apellido").val(), Email: $("#email").val(), Contrasena: $("#contrasena").val(), clave_admin: $("#clave_admin").val(),});
+
+                        });
+
+                      </script>
+</html>
