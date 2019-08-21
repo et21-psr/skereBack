@@ -1,0 +1,87 @@
+<html>
+
+<head>
+  <script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+  <title>Skereee</title>
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+ 
+</head>
+
+
+
+<body>
+  <h1 class="titulo">Skereee (creacion de usuarios)</h1>
+    <div class="formulario">
+      <form id="form-login">
+        
+                          <p><label >Nombre:</label></p>
+                              <p><input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required=""></p>
+
+                          <p><label >Apellido:</label></p>
+                              <p><input name="apellido" type="text" id="apellido" placeholder="Ingresa Apellido" autofocus="" required=""></p>
+
+                          <p><label >Correo electronico:</label></p>
+                              <p><input name="email" type="text" id="email" placeholder="Ingresa Email" autofocus="" required=""></p>
+
+                          <p><label>Contraseña:</label></p>
+                              <p><input name="contrasena" type="password" id="contrasena" placeholder="Ingresa Password" required=""></p>
+
+                          <p><label>Confirmar Contraseña:</label></p>
+                              <p><input name="contrasenia2" type="password" id="contrasenia2" placeholder="Ingresa Password" required=""></p>
+
+                          <p><label>¿Es Administrador?</label></p>
+                              <input type="radio" name="rol" id="rol" value="usuario" checked> usuario<br>
+                              <input type="radio" name="rol" id="rol" value="admin"> administrador<br>
+
+                          <p><label>Clave Administrador:</label></p>
+                              <p><input name="clave_admin" type="password" id="clave_admin" placeholder="Clave Administrador"></p>
+                          <p><input type="submit" id="submit" name="submit" value="Crear" class="boton" ></p>
+
+       </form>
+     </div>
+     <div>
+
+        <form id="delete-login">
+           <p><label >ID:</label></p>
+           <p><input name="id_usuario" type="text" id="id_usuario" placeholder="Nombre" autofocus="" required=""></p>
+           <p><input type="submit" id="submit" name="submit" value="Eliminar" class="boton" ></p>
+        </form>
+     </div>
+</body>
+                      <script>
+                        $("#form-login").submit(function(event){
+                        console.log("entro");
+                        event.preventDefault();
+
+                        $.post("http://localhost:3000/usuario",
+                          {
+                            nombre: $("#nombre").val(),
+                            apellido: $("#apellido").val(),
+                            email: $("#email").val(),
+                            contrasena: $("#contrasena").val(),
+                            rol: $("#rol").val(), 
+                            clave_admin: $("#clave_admin").val()
+                          });
+                      });
+
+                      $("#delete-login").submit(function(event){
+                        console.log("eliminando");
+                        event.preventDefault();
+
+                        $.ajax({
+                          url: 'http://localhost:3000/usuario/'+ $("#id_usuario").val(),
+                          type: 'DELETE',
+                          beforeSend: function (){
+                            console.log("procesando");
+                          },
+                          success: function (response) {
+                            alert(response);
+                          }
+                        });
+                      });                      
+                      </script>
+</html>

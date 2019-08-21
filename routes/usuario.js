@@ -33,8 +33,12 @@ router.delete('/:id', function(req, res, next){
       id_usuario: id
     }
   }).then(result => {
-    if(result== null){
+    console.log(result);
+    if(!result){
       res.status(200).jsonp("no existe");
+    }
+    if(result == 1){
+      res.status(200).jsonp("The data was delete");
     }
     res.status(200).jsonp(result);
   })
