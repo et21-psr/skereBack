@@ -11,6 +11,7 @@
     <title>User Creator</title>
   </head>
   <body class="bg-secondary">
+    <form id="form-login">
       <div class="container-fluid">
           <div class="row">
               <div class="col-2 d-inline-flex p-3">
@@ -51,43 +52,51 @@
                     <div class="card-body">
                       <h5 class="card-title">Ingrese sus datos</h5>
                       <p class="card-text">
-                          <p><label >Nombre:</label></p>
-                          <p><input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required=""></p>
-          
-                      <p><label >Apellido:</label></p>
-                          <p><input name="apellido" type="text" id="apellido" placeholder="Ingresa Apellido" autofocus="" required=""></p>
-          
-                      <p><label >Correo electronico:</label></p>
-                          <p><input name="email" type="text" id="email" placeholder="Ingresa Email" autofocus="" required=""></p>
-          
-                      <p><label>Contraseña:</label></p>
-                          <p><input name="contrasena" type="password" id="contrasena" placeholder="Ingresa Password" required=""></p>
-          
-                      <p><label>Confirmar Contraseña:</label></p>
-                          <p><input name="contrasenia2" type="password" id="contrasenia2" placeholder="Ingresa Password" required=""></p>
-          
-                      <p><label>¿Es Administrador?</label></p>
-                          <input type="radio" name="rol" id="rol" value="usuario" checked> usuario<br>
-                          <input type="radio" name="rol" id="rol" value="admin"> administrador<br>
-          
-                      <p><label>Clave Administrador:</label></p>
-                          <p><input name="clave_admin" type="password" id="clave_admin" placeholder="Clave Administrador"></p>
-                      <p>
-                        <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">Crear</button>
-                        </p>
+                          <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text">Nombre y Apellido</span>
+                              </div>
+                              <input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required="" type="text" aria-label="First name" placeholder="Nombre" class="form-control">
+                              <input name="apellido" type="text" id="apellido" placeholder="Ingresa Apellido" autofocus="" required="" type="text" aria-label="Last name" placeholder="Apellido" class="form-control">
+                            </div>
+                          <div class="input-group mb-3">
+                              <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Email</span>
+                              </div>
+                              <input name="email" type="text" id="email" placeholder="Email" autofocus="" required="" type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                            </div>
+                          <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                  <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                                </div>
+                                <input name="contrasena" type="password" id="contrasena" placeholder="Contraseña" required="" type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                              </div>
+                          <div class="input-group mb-3">
+                                  <div class="input-group-prepend">
+                                    <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
+                                  </div>
+                                  <input name="contrasenia2" type="password" id="contrasenia2" placeholder="Confirmar Contraseña" required="" type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                                </div>
+                          <div class="form-check form-check-inline">
+                                    <input name="clave_admin"  id="clave_admin" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                    <label class="form-check-label" for="inlineCheckbox1">Administrador</label>
+                                  </div>
+                    <footer class="align-text-bottom">
+                      <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block ">Crear</button>
+                    </footer>
                       </p>
                     </div>
-                  </div>   
+                  </div>
                   <div class="alert alert alert-light">
                       <h4 class="alert-heading">Quod si unus dies ejus odi, et tunc youll probabiliter similis sit tibi </h4>
                     </div>
                   </div> 
-                  
           </div>
 
             <div class="col-">  
             </div>
       </div>
+    </form>
                                   
       <!--
         DELETE
