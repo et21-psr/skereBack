@@ -1,87 +1,148 @@
-<html>
+<!doctype html>
+<html lang="esp">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-<head>
-  <script
-  src="https://code.jquery.com/jquery-3.4.1.min.js"
-  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-  crossorigin="anonymous"></script>
-  <title>Skereee</title>
-  <link rel="stylesheet" href="/stylesheets/style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
- 
-</head>
+    <title>User Creator</title>
+  </head>
+  <body class="bg-secondary">
+      <div class="container-fluid">
+          <div class="row">
+              <div class="col-2 d-inline-flex p-3">
+                  <div class="card-header text-light bg-dark ">
+                    <p class="m-3 mb-3 h2 text-center">Skereee</p>
+                    
+                  <div class="card-body p-3">
+                    <p class="card-text">
+                        <div class="nav nav-pills nav-fill mb-3">
+                            <div class="nav-item mb-3">
+                                <button  class="btn btn-outline-light bg-white btn-md btn-block">
+                                  <a class="nav-link text-dark" href="../index.html">Principal</a>
+                                </button>
+                            </div>
+                            <div class="nav-item bd-highlight mb-3">
+                                <button  class="btn btn-outline-light bg-white btn-md btn-block">
+                                  <a class="nav-link text-dark" href="./usuarios.html">Formularios</a>
+                                </button>
+                            </div>
+                            <!--<div class="nav-item bd-highlight mb-3">
+                                <button  class="btn btn-outline-light bg-white btn-md btn-block">
+                                  <a class="nav-link text-dark" href="../index.html">Principal</a>
+                                </button>
+                            </div>-->
+                          </div>
+                    </p>
+                  </div>
+                  </div>
+                </div>
 
+            <div class="col- bg-dark">
+                
+              </div>
 
-
-<body>
-  <h1 class="titulo">Skereee (creacion de usuarios)</h1>
-    <div class="formulario">
-      <form id="form-login">
-        
+            <div class="col- p-3 flex-grow-1 bd-highlight">
+                <div class="card text-white bg-dark mb-3" style="max-width: 1800rem; height: 900px;">
+                    <div class="card-header">Creador de Usuarios</div>
+                    <div class="card-body">
+                      <h5 class="card-title">Ingrese sus datos</h5>
+                      <p class="card-text">
                           <p><label >Nombre:</label></p>
-                              <p><input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required=""></p>
+                          <p><input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required=""></p>
+          
+                      <p><label >Apellido:</label></p>
+                          <p><input name="apellido" type="text" id="apellido" placeholder="Ingresa Apellido" autofocus="" required=""></p>
+          
+                      <p><label >Correo electronico:</label></p>
+                          <p><input name="email" type="text" id="email" placeholder="Ingresa Email" autofocus="" required=""></p>
+          
+                      <p><label>Contraseña:</label></p>
+                          <p><input name="contrasena" type="password" id="contrasena" placeholder="Ingresa Password" required=""></p>
+          
+                      <p><label>Confirmar Contraseña:</label></p>
+                          <p><input name="contrasenia2" type="password" id="contrasenia2" placeholder="Ingresa Password" required=""></p>
+          
+                      <p><label>¿Es Administrador?</label></p>
+                          <input type="radio" name="rol" id="rol" value="usuario" checked> usuario<br>
+                          <input type="radio" name="rol" id="rol" value="admin"> administrador<br>
+          
+                      <p><label>Clave Administrador:</label></p>
+                          <p><input name="clave_admin" type="password" id="clave_admin" placeholder="Clave Administrador"></p>
+                      <p>
+                        <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block">Crear</button>
+                        </p>
+                      </p>
+                    </div>
+                  </div>   
+                  <div class="alert alert alert-light">
+                      <h4 class="alert-heading">Quod si unus dies ejus odi, et tunc youll probabiliter similis sit tibi </h4>
+                    </div>
+                  </div> 
+                  
+          </div>
 
-                          <p><label >Apellido:</label></p>
-                              <p><input name="apellido" type="text" id="apellido" placeholder="Ingresa Apellido" autofocus="" required=""></p>
+            <div class="col-">  
+            </div>
+      </div>
+                                  
+      <!--
+        DELETE
+       <div>
+         <form id="delete-login">
+             <p><label >ID:</label></p>
+             <p><input name="id_ usuario" type="text" id="id_usuario" placeholder="Nombre" autofocus="" required=""></p>
+             <p><input type="submit" id="submit" name="submit" value="Eliminar" class="boton" ></p>
+          </form>
+       </div>
+       -->
 
-                          <p><label >Correo electronico:</label></p>
-                              <p><input name="email" type="text" id="email" placeholder="Ingresa Email" autofocus="" required=""></p>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <link rel="stylesheet" href="/stylesheets/style.css">
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+  </body>
+  
+  
+  <!--LOGIN/DELETE-->
+  <script>
+    $("#form-login").submit(function(event){
+    console.log("entro");
+    event.preventDefault();
 
-                          <p><label>Contraseña:</label></p>
-                              <p><input name="contrasena" type="password" id="contrasena" placeholder="Ingresa Password" required=""></p>
+    $.post("http://localhost:3000/usuario",
+      {
+        nombre: $("#nombre").val(),
+        apellido: $("#apellido").val(),
+        email: $("#email").val(),
+        contrasena: $("#contrasena").val(),
+        rol: $("#rol").val(), 
+        clave_admin: $("#clave_admin").val()
+      });
+  });
 
-                          <p><label>Confirmar Contraseña:</label></p>
-                              <p><input name="contrasenia2" type="password" id="contrasenia2" placeholder="Ingresa Password" required=""></p>
+  $("#delete-login").submit(function(event){
+    console.log("eliminando");
+    event.preventDefault();
 
-                          <p><label>¿Es Administrador?</label></p>
-                              <input type="radio" name="rol" id="rol" value="usuario" checked> usuario<br>
-                              <input type="radio" name="rol" id="rol" value="admin"> administrador<br>
-
-                          <p><label>Clave Administrador:</label></p>
-                              <p><input name="clave_admin" type="password" id="clave_admin" placeholder="Clave Administrador"></p>
-                          <p><input type="submit" id="submit" name="submit" value="Crear" class="boton" ></p>
-
-       </form>
-     </div>
-     <div>
-
-        <form id="delete-login">
-           <p><label >ID:</label></p>
-           <p><input name="id_usuario" type="text" id="id_usuario" placeholder="Nombre" autofocus="" required=""></p>
-           <p><input type="submit" id="submit" name="submit" value="Eliminar" class="boton" ></p>
-        </form>
-     </div>
-</body>
-                      <script>
-                        $("#form-login").submit(function(event){
-                        console.log("entro");
-                        event.preventDefault();
-
-                        $.post("http://localhost:3000/usuario",
-                          {
-                            nombre: $("#nombre").val(),
-                            apellido: $("#apellido").val(),
-                            email: $("#email").val(),
-                            contrasena: $("#contrasena").val(),
-                            rol: $("#rol").val(), 
-                            clave_admin: $("#clave_admin").val()
-                          });
-                      });
-
-                      $("#delete-login").submit(function(event){
-                        console.log("eliminando");
-                        event.preventDefault();
-
-                        $.ajax({
-                          url: 'http://localhost:3000/usuario/'+ $("#id_usuario").val(),
-                          type: 'DELETE',
-                          beforeSend: function (){
-                            console.log("procesando");
-                          },
-                          success: function (response) {
-                            alert(response);
-                          }
-                        });
-                      });                      
-                      </script>
+    $.ajax({
+      url: 'http://localhost:3000/usuario/'+ $("#id_usuario").val(),
+      type: 'DELETE',
+      beforeSend: function (){
+        console.log("procesando");
+      },
+      success: function (response) {
+        alert(response);
+      }
+    });
+  });                      
+  </script>
 </html>
+
+
+
