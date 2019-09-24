@@ -71,7 +71,29 @@
               </form>
         </nav>
       </div>
+      <table id="categorias">
+        <th>Filtrar Por></th>
+        <tr><td><input type="checkbox" name="filtrar" id="filtar" value="Todas">Todas</td></tr>
+      </table>
 
 
 
 </html>
+<script>
+$.ajax({
+  url: "http://localhost:3000/categoria/",
+  type: "GET",
+  success: function(response){
+    console.log(response);
+    
+    response.forEach(function(categoria){
+      console.log(categoria);
+      
+      html = '<tr><td><input type="checkbox" name="filtrar" id="filtar" value="'+categoria.id_categoria+'">'+categoria.nombre+'</td></tr>';
+
+      $("#categorias").append(html);
+    })
+  }
+})
+
+</script>
