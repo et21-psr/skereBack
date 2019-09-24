@@ -1,10 +1,16 @@
 var express = require('express');
 var router = express.Router();
 var models = require("./../mysql");
+var tablausuario = require("./../mysql/usuario");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  models.posteo.findAll().then(result => {
+  models.posteo.findAll({
+    include: [{
+      model: tablausuario,
+      required: true
+     }]}
+  ).then(result => {
     res.status(200).jsonp(result);
   })
   console.log('llego');

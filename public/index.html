@@ -31,7 +31,7 @@
   <title>Skereee</title>
 </head>
 
-<body>
+<body id=posteo>
 <!--
   primera navbar
 -->
@@ -52,7 +52,6 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="./frontend/registro.html"> Form </a>
                 </li>
-                
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Category
@@ -71,7 +70,38 @@
               </form>
         </nav>
       </div>
+      <table id="categoria">
 
+      </table>
+</body>
+<script>
+$.ajax({
+  url: "http://localhost:3000/posteo/",
+  type: "GET",
+  success: function(response){
+    console.log(response);
+    response.forEach(function(posteo){
+      html = "<div class='conteiner card col'><div class='col form-row'><h2>"+posteo.titulo+"</h2></div><div class='row col'><h4 class='col-md-7'>"+posteo.texto+"</h4></div><div class='row col'><h5 class='col-md-7'>"+posteo.usuario+"</h5></div></div>";
+      $("#posteo").append(html);
+    })
+    
+  }
+})
+
+$.ajax({
+  url: "http://localhost:3000/categoria/",
+  type: "GET",
+  success: function (response){
+    console.log(response);
+    response.forEach(function(categoria){
+                    html = "<tr><td><a id='"+categoria.id_categoria+"'>"+categoria.nombre+"</a></td></tr>";
+                    $("#categoria").append(html);
+                });
+  }
+  
+})
+
+</script>
 
 
 </html>
