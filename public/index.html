@@ -52,7 +52,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="./frontend/registro.html"> Form </a>
                 </li>
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Category
                   </a>
@@ -62,7 +62,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
-                </li>
+                </li>-->
              </ul>
              <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -70,38 +70,48 @@
               </form>
         </nav>
       </div>
-      <table id="categoria">
 
-      </table>
+      <table class="table table-dark container">
+                <div id="posteo">
+                </div>
+                <div id="categoria" class="col-sm-8">
+                      <tr> <th> <input type='checkbox' id="All" aria-label='Checkbox for following text input'> All </th> </tr>              
+                  </div>
+              </div>
+     </table>
 </body>
+
 <script>
-$.ajax({
-  url: "http://localhost:3000/posteo/",
-  type: "GET",
-  success: function(response){
-    console.log(response);
-    response.forEach(function(posteo){
-      html = "<div class='conteiner card col'><div class='col form-row'><h2>"+posteo.titulo+"</h2></div><div class='row col'><h4 class='col-md-7'>"+posteo.texto+"</h4></div><div class='row col'><h5 class='col-md-7'>"+posteo.usuario+"</h5></div></div>";
-      $("#posteo").append(html);
-    })
-    
-  }
-})
 
-$.ajax({
-  url: "http://localhost:3000/categoria/",
-  type: "GET",
-  success: function (response){
-    console.log(response);
-    response.forEach(function(categoria){
-                    html = "<tr><td><a id='"+categoria.id_categoria+"'>"+categoria.nombre+"</a></td></tr>";
-                    $("#categoria").append(html);
+        $.ajax({
+            url: "http://localhost:3000/posteo/", 
+            type: "GET",
+            beforeSend: function (){
+            console.log("procesando");
+            },
+            success: function (response) {
+                console.log(response);
+                response.forEach(function(posteo){
+                    html = " <a id=''>  " + posteo.titulo + "  " + posteo.createdAt +"</a> ";
+                    $("#posteo").append(html);
                 });
-  }
-  
-})
+            
+            }
+        });
 
+        $.ajax({
+          url: "http://localhost:3000/categoria/",
+          type: "GET",
+          success: function (response){
+            console.log(response);
+            response.forEach(function(categoria){
+                            html = "<input type='checkbox' id=" + categoria.id_categoria +" aria-label='Checkbox for following text input'>"  + categoria.nombre;
+                            $("#categoria").append(html);
+                        });
+          }
+        })
 </script>
 
-
+                            <!-- <tr><td><a id='"++"'>"+categoria.nombre+"</a></td></tr>"; 
+            </tr><div class='input-group mb-3'> <div class='input-group-prepend'> <div class='input-group-text'><input type='checkbox' id="+ categoria.id_categoria + " aria-label='Checkbox for following text input'> " + categoria.nombre + "</div> </div> </div>";-->
 </html>
