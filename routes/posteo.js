@@ -6,7 +6,9 @@ var tablausuario = require("./../mysql/usuario");
 
 router.get('/', function(req, res, next) {
 
-  models.posteo.findAll().then(result => {
+  models.posteo.findAll({
+    include: [{model:usuario}]
+  }).then(result => {
     res.status(200).jsonp(result);
 
   })
