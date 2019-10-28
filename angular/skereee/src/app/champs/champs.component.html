@@ -1,0 +1,26 @@
+<table class="table">
+  
+  <thead class="thead-dark">
+    <tr><th colspan="5"><h2>Lista Campeones</h2></th></tr>
+      <tr>
+        <th>ICON</th>
+        <th>Nombre</th>
+        <th>Description</th>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    
+  </thead>
+
+  <tbody>
+      <tr *ngFor="let campeoneslol of champions">
+        <td><img src={{campeoneslol.icon}} height="50" width="50"></td>
+        <td>{{campeoneslol.name}}</td>
+        <td>{{campeoneslol.title}}</td>
+        <td>{{campeoneslol.tags}}</td>
+        <td>{{campeoneslol.description}}</td>
+      </tr>
+  </tbody>
+    
+  
+</table>

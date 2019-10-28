@@ -31,10 +31,8 @@
   <title>Skereee</title>
 </head>
 
-<body>
-<!--
-  primera navbar
--->
+<body id=posteo>
+<!-- Primera navbar -->
     <div class="pos-f-t">
 
         <nav class="navbar navbar-dark bg-dark">
@@ -52,8 +50,7 @@
                 <li class="nav-item">
                     <a class="nav-link text-white" href="./frontend/registro.html"> Form </a>
                 </li>
-                
-                <li class="nav-item dropdown">
+                <!--<li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle text-white" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                     Category
                   </a>
@@ -63,7 +60,7 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="#">Something else here</a>
                   </div>
-                </li>
+                </li>-->
              </ul>
              <form class="form-inline my-2 my-lg-0">
                 <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
@@ -71,13 +68,70 @@
               </form>
         </nav>
       </div>
+<<<<<<< HEAD
       <table id="categorias">
         <th>Filtrar Por></th>
         <tr><td><input type="checkbox" name="filtrar" id="filtar" value="Todas">Todas</td></tr>
       </table>
+=======
+    <div>
+      <div>
+        <table class="table table-dark container">
+                  <div id="categoria" class="col-sm-8">
+                        <tr> <th> <input type='checkbox' id="All" aria-label='Checkbox for following text input'> All </th> </tr>              
+                    </div>
+                </div>
+        </table>
+      </div>
+      <div id="posteos">
+
+      </div>
+    </div>
+</body>
+>>>>>>> 5513e699ec5eb137bb17a5e40eb9e03167aa508d
+
+<script>
+
+        $.ajax({
+            url: "http://localhost:3000/posteo/", 
+            type: "GET",
+            beforeSend: function (){
+            console.log("procesando");
+            },
+            success: function (response) {
+                console.log(response);
+                response.forEach(function(posteo){
+                    html = "<div class='card col-md-10' style='margin: 10px 0 0 50px;'>" +
+                           "<div class='card-body'>" +
+                           "<h5 class='card-title'>"+posteo.titulo+"</h5>" +
+                           "<h6 class='card-subtitle mb-2 text-muted'>"+usuario.email+"</h6>" +
+                           "<p class='card-text'>"+posteo.texto+"</p>" +
+                           "<p class='card-text'>"+posteo.createdAt+"</p>" +
+                           "</div>" +
+                           "</div>";
+                    $("#posteos").append(html);
+                });
+            
+            }
+        });
+
+        $.ajax({
+          url: "http://localhost:3000/categoria/",
+          type: "GET",
+          success: function (response){
+            console.log(response);
+            response.forEach(function(categoria){
+                            html = "<input type='checkbox' id=" + categoria.id_categoria +" aria-label='Checkbox for following text input'>"  + categoria.nombre;
+                            $("#categoria").append(html);
+                        });
+          }
+        })
 
 
+</script>
 
+            <!-- <tr><td><a id='"++"'>"+categoria.nombre+"</a></td></tr>"; 
+            </tr><div class='input-group mb-3'> <div class='input-group-prepend'> <div class='input-group-text'><input type='checkbox' id="+ categoria.id_categoria + " aria-label='Checkbox for following text input'> " + categoria.nombre + "</div> </div> </div>";-->
 </html>
 <script>
 $.ajax({
