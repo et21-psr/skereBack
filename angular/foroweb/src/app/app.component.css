@@ -1,0 +1,37 @@
+*{
+    margin: 0px;
+    padding: 0px;
+
+}
+.principal{
+    margin: auto;
+    background-color: red;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 960px;
+    height: 800px;
+}
+.navbar{
+    width: auto;
+    height: 75px;
+    background-color: slateblue;
+}
+.categorias{
+    float: right;
+    width: 200px;
+    height: 725px;
+    background-color: seagreen;
+}
+.usuario{
+    float: left;
+    width: 200px;
+    height: 725px;
+    background-color: skyblue;
+}
+.posteos{
+    float: center;
+    background-color: springgreen;
+    height: 725px;
+    width: auto;
+
+}

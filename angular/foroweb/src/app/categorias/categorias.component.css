@@ -1,0 +1,12 @@
+*{
+    margin: auto;
+    float: center;
+}
+.panel-categoria {
+    margin-top: 10px;
+    width: 170px;
+}
+
+.panel-categoria > .relleno {
+    margin-left: -10px;
+}
