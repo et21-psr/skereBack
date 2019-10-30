@@ -1,0 +1,15 @@
+<div class="card panel-categoria">
+    <div class="card-header text-center">
+        <h4>Categorias: </h4>
+    </div>
+    <div class="card-body relleno">
+        <ul>
+            <input type="radio" name="filtro" id="filtro" value="0">Todas
+        </ul>
+        <ul *ngFor="let Categoria of categorias">
+            <input type="radio" id="filtro" name="filtro" value="{{Categoria.id_categoria}}">{{Categoria.nombre}}
+        </ul>
+    </div>
+</div>
+
+

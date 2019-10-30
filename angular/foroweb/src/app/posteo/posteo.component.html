@@ -1,0 +1,12 @@
+<div class="all">
+    <div class="card" *ngFor="let Posteo of posteos">
+        <div class="card-header">
+            <h5 class="card-title">{{Posteo.titulo}}</h5>
+            <span class="hora"><a href="">{{Posteo.createdAt}}</a></span>
+            <span class="usuario"><a href="">{{Posteo.usuario}}</a></span>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{Posteo.texto}}</p>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,12 @@
+
+.card{
+    margin: auto;
+    margin-top: 10px;
+    width: 75%;
+}
+.hora{
+    float: right;
+}
+.all{
+    height: 100%;
+}

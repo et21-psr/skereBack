@@ -1,151 +1,165 @@
 <!doctype html>
 <html lang="esp">
-  <head>
-      <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
-      <script
-      src="https://code.jquery.com/jquery-3.4.1.min.js"
-      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
-      crossorigin="anonymous"></script>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<head>
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
+  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <title>User Creator</title>
-  </head>
-  <body class="bg-secondary">
-    <form id="form-login">
-      <div class="container-fluid">
-          <div class="row">
-              <div class="col-2 d-inline-flex p-3">
-                  <div class="card-header text-light bg-dark ">
-                    <p class="m-3 mb-3 h2 text-center">Skereee</p>
-                    
-                  <div class="card-body p-3">
-                    <p class="card-text">
-                        <div class="nav nav-pills nav-fill mb-3">
-                            <div class="nav-item mb-3">
-                                <button  class="btn btn-outline-light bg-white btn-md btn-block">
-                                  <a class="nav-link text-dark" href="../index.html">Home</a>
-                                </button>
-                            </div>
-                            <div class="nav-item bd-highlight mb-3">
-                                <button  class="btn btn-outline-light bg-white btn-md btn-block">
-                                  <a class="nav-link text-dark" href="./usuarios.html">User List</a>
-                                </button>
-                            </div>
-                            <!--<div class="nav-item bd-highlight mb-3">
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <title>User Creator</title>
+</head>
+
+<body class="bg-secondary">
+  <form id="form-login">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-2 d-inline-flex p-3">
+          <div class="card-header text-light bg-dark ">
+            <p class="m-3 mb-3 h2 text-center">Skereee</p>
+
+            <div class="card-body p-3">
+              <p class="card-text">
+                <div class="nav nav-pills nav-fill mb-3">
+                  <div class="nav-item mb-3">
+                    <button class="btn btn-outline-light bg-white btn-md btn-block">
+                      <a class="nav-link text-dark" href="../index.html">Home</a>
+                    </button>
+                  </div>
+                  <div class="nav-item bd-highlight mb-3">
+                    <button class="btn btn-outline-light bg-white btn-md btn-block">
+                      <a class="nav-link text-dark" href="./usuarios.html">User List</a>
+                    </button>
+                  </div>
+                  <!--<div class="nav-item bd-highlight mb-3">
                                 <button  class="btn btn-outline-light bg-white btn-md btn-block">
                                   <a class="nav-link text-dark" href="../index.html">Principal</a>
                                 </button>
                             </div>-->
-                          </div>
-                    </p>
-                  </div>
-                  </div>
                 </div>
-
-            <div class="col- bg-dark">
-                
-              </div>
-
-            <div class="col- p-3 flex-grow-1 bd-highlight">
-                <div class="card text-white bg-dark mb-3" style="max-width: 1800rem; height: 500px;">
-                    <div class="card-header">Creador de Usuarios</div>
-                    <div class="card-body">
-                      <h5 class="card-title">Ingrese sus datos</h5>
-                      <p class="card-text">
-                          <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text">Nombre y Apellido</span>
-                              </div>
-                              <input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required="" type="text" aria-label="First name"  class="form-control">
-                              <input name="apellido" type="text" id="apellido" placeholder="Apellido" autofocus="" required="" type="text" aria-label="Last name"  class="form-control">
-                            </div>
-                          <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Email</span>
-                              </div>
-                              <input name="email" type="text" id="email" autofocus="" required="" type="text" class="form-control" placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
-                            </div>
-                          <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                  <span class="input-group-text" id="basic-addon1">Contraseña</span>
-                                </div>
-                                <input name="contrasena" type="password" id="contrasena" placeholder="Contraseña" required="" type="text" class="form-control"  aria-label="Username" aria-describedby="basic-addon1">
-                              </div>
-                          <div class="input-group mb-3">
-                                  <div class="input-group-prepend">
-                                    <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
-                                  </div>
-                                  <input name="contrasenia2" type="password" id="contrasenia2" placeholder="Confirmar Contraseña" required="" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                                </div>
-                          <div class="form-check form-check-inline">
-                                    <input name="clave_adminC"  id="clave_adminC" class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                                    <label class="form-check-label" for="inlineCheckbox1">Administrador</label>
-                                  </div>
-                                  <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                      <span class="input-group-text" id="basic-addon1">Clave de Administrador</span>
-                                    </div>
-                                    <input name="clave_admin" type="password" id="clave_admin" placeholder="Clave de Administrador" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
-                                  </div>
-                    <footer class="align-text-bottom">
-                      <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block ">Crear</button>
-                    </footer>
-                      </p>
-                    </div>
-                  </div>
-                </form>
-
-                <form id="delete-login">
-                <div class="card text-white bg-dark mb-2" style="max-width: 180rem; height: 225px;">
-                       <div class="card-header">Eliminar Usuario</div>
-                       <div class="card-body">
-                       <h5 class="card-title">Ingrese sus datos</h5>
-                       <p class="card-text">
-                          <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                <span class="input-group-text" id="basic-addon1">Email</span>
-                              </div>
-                              <select name="borrar_usuario" type="text" id="borrar_usuario" autofocus="" required="" aria-label="First name" class="form-control"  aria-describedby="basic-addon1"></select>
-                            </div>
-                      </p>
-                      <footer>
-                          <input type="submit" id="submit2" name="submit" value="Eliminar" class="btn btn-danger btn-lg btn-block p-2 mb-5" >
-                      </footer>
-                       </div>
-                       </div>
-                       </div> 
-               </div>
-               </form>
-
-            <div class="col-">  
+              </p>
             </div>
+          </div>
+        </div>
+
+        <div class="col- bg-dark">
+
+        </div>
+
+        <div class="col- p-3 flex-grow-1 bd-highlight">
+          <div class="card text-white bg-dark mb-3" style="max-width: 1800rem; height: 500px;">
+            <div class="card-header">Creador de Usuarios</div>
+            <div class="card-body">
+              <h5 class="card-title">Ingrese sus datos</h5>
+              <p class="card-text">
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text">Nombre y Apellido</span>
+                  </div>
+                  <input name="nombre" type="text" id="nombre" placeholder="Nombre" autofocus="" required="" type="text"
+                    aria-label="First name" class="form-control">
+                  <input name="apellido" type="text" id="apellido" placeholder="Apellido" autofocus="" required=""
+                    type="text" aria-label="Last name" class="form-control">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Email</span>
+                  </div>
+                  <input name="email" type="text" id="email" autofocus="" required="" type="text" class="form-control"
+                    placeholder="Email" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Contraseña</span>
+                  </div>
+                  <input name="contrasena" type="password" id="contrasena" placeholder="Contraseña" required=""
+                    type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Confirmar Contraseña</span>
+                  </div>
+                  <input name="contrasenia2" type="password" id="contrasenia2" placeholder="Confirmar Contraseña"
+                    required="" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <div class="form-check form-check-inline">
+                  <input name="clave_adminC" id="clave_adminC" class="form-check-input" type="checkbox"
+                    id="inlineCheckbox1" value="option1">
+                  <label class="form-check-label" for="inlineCheckbox1">Administrador</label>
+                </div>
+                <div class="input-group mb-3">
+                  <div class="input-group-prepend">
+                    <span class="input-group-text" id="basic-addon1">Clave de Administrador</span>
+                  </div>
+                  <input name="clave_admin" type="password" id="clave_admin" placeholder="Clave de Administrador"
+                    type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1">
+                </div>
+                <footer class="align-text-bottom">
+                  <button type="submit" id="submit" class="btn btn-primary btn-lg btn-block ">Crear</button>
+                </footer>
+              </p>
+            </div>
+          </div>
+  </form>
+
+  <form id="delete-login">
+    <div class="card text-white bg-dark mb-2" style="max-width: 180rem; height: 225px;">
+      <div class="card-header">Eliminar Usuario</div>
+      <div class="card-body">
+        <h5 class="card-title">Ingrese sus datos</h5>
+        <p class="card-text">
+          <div class="input-group mb-3">
+            <div class="input-group-prepend">
+              <span class="input-group-text" id="basic-addon1">Email</span>
+            </div>
+            <select name="borrar_usuario" type="text" id="borrar_usuario" autofocus="" required=""
+              aria-label="First name" class="form-control" aria-describedby="basic-addon1"></select>
+          </div>
+        </p>
+        <footer>
+          <input type="submit" id="submit2" name="submit" value="Eliminar"
+            class="btn btn-danger btn-lg btn-block p-2 mb-5">
+        </footer>
       </div>
-    
-                                  
+    </div>
+    </div>
+    </div>
+  </form>
+
+  <div class="col-">
+  </div>
+  </div>
 
 
-    <!-- Optional JavaScript -->
-    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <link rel="stylesheet" href="/stylesheets/style.css">
-    
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-  </body>
-  
-  
-  <!--LOGIN/DELETE-->
-  <script>
-    $("#form-login").submit(function(event){
-      Swal.fire(
+
+
+  <!-- Optional JavaScript -->
+  <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+  <link rel="stylesheet" href="/stylesheets/style.css">
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+</body>
+
+
+<!--LOGIN/DELETE-->
+<script>
+  $("#form-login").submit(function (event) {
+    Swal.fire(
       'Se creo con exito!',
       'Recargue la pagina para crear otro',
       'success'
-      );
+    );
     event.preventDefault();
     $.post("http://localhost:3000/usuario/",
       {
@@ -157,14 +171,14 @@
       });
   });
 
-  $("#delete-login").submit(function(event){
+  $("#delete-login").submit(function (event) {
     console.log("eliminando");
     event.preventDefault();
 
     $.ajax({
-      url: 'http://localhost:3000/usuario/'+ $("#borrar_usuario").val(),
+      url: 'http://localhost:3000/usuario/' + $("#borrar_usuario").val(),
       type: 'DELETE',
-      beforeSend: function (){
+      beforeSend: function () {
         console.log("procesando");
       },
       success: function (response) {
@@ -173,30 +187,28 @@
           'Se elimino con exito',
           response,
           'success'
-          );
+        );
       }
     });
   });
-  
-  
+
+
   $.ajax({
-            url: 'http://localhost:3000/usuario/', 
-            type: 'GET',
-            beforeSend: function (){
-            },
-            success: function (response) {
-                console.log(response);
-                response.forEach(function(usuario){
-                    html = "<option class='' value="+ usuario.id_usuario +">"
-                                +usuario.email
-                                +"</option>";
-                    $("#borrar_usuario").append(html);
-                });
-            
-            }
-        });
-  </script>
+    url: 'http://localhost:3000/usuario/',
+    type: 'GET',
+    beforeSend: function () {
+    },
+    success: function (response) {
+      console.log(response);
+      response.forEach(function (usuario) {
+        html = "<option class='' value=" + usuario.id_usuario + ">"
+          + usuario.email
+          + "</option>";
+        $("#borrar_usuario").append(html);
+      });
+
+    }
+  });
+</script>
+
 </html>
-
-
-
