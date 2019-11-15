@@ -4,12 +4,10 @@
     </div>
     <div class="card-body relleno">
         <ul>
-            <input type="radio" name="filtro" id="filtro" value="0">Todas
+            <input type="radio" name="filtro" id="filtro" value="0" checked>Todas
         </ul>
         <ul *ngFor="let Categoria of categorias">
             <input type="radio" id="filtro" name="filtro" value="{{Categoria.id_categoria}}">{{Categoria.nombre}}
         </ul>
     </div>
 </div>
-
-

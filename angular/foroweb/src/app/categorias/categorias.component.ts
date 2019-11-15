@@ -9,8 +9,8 @@ import { DebugService } from '../servicios/debug.service'
   styleUrls: ['./categorias.component.css']
 })
 export class CategoriasComponent implements OnInit {
-  categorias : Categoria[];
-  constructor(private servicio: CategoriasService, private DebugService : DebugService) { }
+  categorias: Categoria[];
+  constructor(private servicio: CategoriasService, private DebugService: DebugService) { }
 
   ngOnInit() {
     this.getCategoria();
@@ -18,12 +18,12 @@ export class CategoriasComponent implements OnInit {
 
   getCategoria(): void {
     this.servicio.getCategoria()
-        .subscribe(categorias => this.categorias = categorias);
+      .subscribe(categorias => this.categorias = categorias);
     console.log(this.categorias);
     this.Debug("Servicio Categorias OK!");
-    
+
   }
-  Debug(message: string){
+  Debug(message: string) {
     this.DebugService.add(`DebugService: ${message}`);
   }
 }

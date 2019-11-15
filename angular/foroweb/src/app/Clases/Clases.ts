@@ -24,8 +24,10 @@ export class Posteo {
     texto: string;
     archivo: string;
     titulo: string;
-    usuario: number;
-    categoria: number;
+    usuarioId: number;
+    categoriaId: number;
     createdAt: string;
-    updatedAt:string;
+    updatedAt: string;
+    usuario: Usuario;
+    categorium: Categoria;
 }
