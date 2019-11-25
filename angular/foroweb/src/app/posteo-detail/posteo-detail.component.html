@@ -1,0 +1,14 @@
+<div class="all">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title">{{posteo.titulo}}</h5>
+            <span class="hora"><a >{{posteo.created_at}}</a></span>
+            <span class="usuario"><a >{{posteo.usuario.email}}</a></span>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{posteo.texto}}</p>
+        </div>
+    </div>
+</div>
+<app-comentario [id_posteo]=idposteo></app-comentario>
+<app-debug></app-debug>

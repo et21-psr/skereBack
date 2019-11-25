@@ -1,7 +1,4 @@
-*{
-    margin: auto;
-    float: center;
-}
+
 .panel-categoria {
     margin-top: 10px;
     width: 170px;
@@ -10,4 +7,20 @@
 .panel-categoria > .relleno > ul{
     margin: auto;
     margin-left: -35px;
+}
+.categorias{
+    z-index: 2;
+    float: right;
+    position: relative;
+    width: 15%;
+    height: 100%;
+}
+
+.posteos{
+    float: left;
+    position: relative;
+    height: 100%;
+    width: 80%;
+    left: 10%;
+    top: 100%;
 }

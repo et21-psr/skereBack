@@ -1,0 +1,10 @@
+
+    <input #searchBox id="search-box" (input)="search(searchBox.value)" type="search" placeholder="Buscar" aria-label="Search" class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search" autocomplete="off"/>
+  
+    <ul class="list-group">
+      <li class="list-group-item" *ngFor="let Posteo of posteos$ | async" >
+        <a href="/posteo/{{Posteo.id_posteo}}" class="title">
+          {{Posteo.titulo}}
+        </a>
+      </li>
+    </ul>

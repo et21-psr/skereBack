@@ -1,17 +1,26 @@
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark all">
-    <a class="navbar-brand" href="/">SKEREEE</a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="navbar-nav">
-        <a class="nav-item nav-link" href="/home">Inicio</a>
-        <a class="nav-item nav-link" href="/userlist">Lista de Usuarios</a>
-        <a class="nav-item nav-link" href="/form">Formularios</a>
-      </div>
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark all">
+  <a href="#" class="navbar-brand nav-item dropdown nav-link dropdown-toggle text-white" id="navbarDropdown"
+    role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">SKEREEE</a>
+  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+    <a class="dropdown-item text-center nav-link" href="/home">Home</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item nav-link text-center" href="/userlist">User List</a>
+    <div class="dropdown-divider"></div>
+    <a class="dropdown-item text-center" href="/login">Sing in / Sing up</a>
+    <div class="dropdown-divider"></div>
+    <button class="dropdown-item text-center" (click)="logout()">Log out</button>
+  </div>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup"
+    aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+
     </div>
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="search" placeholder="Buscar" aria-label="Search">
-      <button class="btn btn-outline-primary my-2 my-sm-0" type="submit">Buscar</button>
-    </form>
-  </nav>
+  </div>
+  <form class="form-inline my-2 my-lg-0">
+    <app-posteo-search class="search"></app-posteo-search>
+  </form>
+</nav>

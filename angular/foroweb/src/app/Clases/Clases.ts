@@ -5,9 +5,20 @@ export class Categoria {
     createdAt: string;
     updateAt: string;
 }
-
+export class Comentario {
+    id_comentario: number;
+    texto: string;
+    archivo: string;
+    comentario_padre: number;
+    usuarioId: number;
+    titulo: string;
+    posteoId: number;
+    createdAt: string;
+    updatedAt: string;
+    usuario: Usuario;
+}
 export class Usuario {
-    id_usuario: number;
+    id_usuario: string;
     email: string;
     contrasena: string;
     nombre: string;
@@ -24,10 +35,17 @@ export class Posteo {
     texto: string;
     archivo: string;
     titulo: string;
-    usuarioId: number;
+    usuarioId: string;
     categoriaId: number;
-    createdAt: string;
-    updatedAt: string;
+    created_at: string;
+    updated_at: string;
     usuario: Usuario;
     categorium: Categoria;
 }
+
+export class crearposteo {
+    categoriaId: number;
+    texto: string;
+    titulo: string;
+    usuarioId: string;
+  }

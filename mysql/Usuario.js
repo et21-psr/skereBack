@@ -34,9 +34,9 @@ clave_admin:{
   },
   updatedAt:{
     type: DataTypes.DATE,
-    field: "updated_at"
+    field: "update_at"
   }
-  }, { freezeTableName: true,
+  }, { freezeTableName: true, timestamps: false,
   tableName: 'usuario'});
 
 //Tarjeta.removeAttribute('id');

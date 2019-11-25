@@ -13,15 +13,15 @@ module.exports = function(sequelize, DataTypes) {
     nombre:{
        type : DataTypes.STRING
     },
-    createdAt:{
+    created_at:{
       type: DataTypes.DATE,
       field: "created_at"
     },
-    updatedAt:{
+    update_at:{
       type: DataTypes.DATE,
-      field: "updated_at"
+      field: "update_at"
     }
-  }, { freezeTableName: true,
+  }, { freezeTableName: true, timestamps: false,
   tableName: 'categoria'});
 
 //Tarjeta.removeAttribute('id');

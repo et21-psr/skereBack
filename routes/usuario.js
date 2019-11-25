@@ -51,4 +51,23 @@ router.post('/', function(req, res, next){
   })
 
 });
+
+//login
+router.post('/login', function(req, res, next){
+  let user = req.body;
+models.usuario.findOne({
+  where:{
+    email: user.email,
+    contrasena: user.contrasena
+    }
+  }).then(result => {
+    if(result){
+      res.status(200).jsonp(result);
+    }
+    else {
+      res.status(200).jsonp(resul);
+    }
+  });
+})
+
 module.exports = router;

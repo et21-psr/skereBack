@@ -1,8 +1,30 @@
 <div class="all">
+    <div *ngIf="registrado()">
+        <form #frmCreatePost="ngForm" (ngSubmit)="onCreate(frmCreatePost)">
+            <div class="card">
+                <div class="card-header">
+                    <h5 class="title">Agregar Post</h5>
+                    <div class="input-group mb-3"><input class="form-control" type="text" name="titulo" placeholder="titulo..." ngModel required autocomplete="off">
+                        <div class="a">
+                    <select class="custom-select" ngModel name="categoriaId">
+                        <option value="{{Categoria.id_categoria}}" *ngFor="let Categoria of categorias">
+                            {{Categoria.nombre}}</option>
+                    </select>
+                </div>
+                </div>
+                </div>
+                <div class="card-body">
+                    <p class="card-text"><input class="form-control" ngModel type="text" name="texto" placeholder="Texto..." required
+                            autocomplete="off"></p>
+                    <input type="submit" value="Agregar" class="btn btn-primary">
+                </div>
+            </div>
+        </form>
+    </div>
     <div class="card" *ngFor="let Posteo of posteos">
         <div class="card-header">
             <h5 class="card-title">{{Posteo.titulo}}</h5>
-            <span class="hora"><a href="">{{Posteo.createdAt}}</a></span>
+            <span class="hora"><a routerLink="/posteo/{{Posteo.id_posteo}}">{{Posteo.created_at}}</a></span>
             <span class="usuario"><a href="">{{Posteo.usuario.email}}</a></span>
         </div>
         <div class="card-body">

@@ -1,0 +1,12 @@
+<div class="login">
+
+  <h2 class="login-header bg-dark">Log in</h2>
+
+  <form #frmLogin="ngForm" class="login-container" (ngSubmit)="onLogin(frmLogin)">
+    <p><input type="email" name="email" placeholder="Email" ngModel required autocomplete="off"></p>
+    <p><input type="password" placeholder="Password" name="contrasena" ngModel required autocomplete="off"></p>
+    <p><input type="submit" value="Send" class="bg-dark"></p>
+  </form>
+</div>
+
+<app-create-user class="create-user"></app-create-user>

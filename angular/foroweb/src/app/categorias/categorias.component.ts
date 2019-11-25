@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { Categoria } from '../Clases/Clases';
 import { CategoriasService } from '../servicios/categorias.service';
 import { DebugService } from '../servicios/debug.service'
+import { PosteoComponent } from '../posteo/posteo.component';
+import { PosteoService } from '../servicios/posteo.service';
 
 @Component({
   selector: 'app-categorias',
@@ -10,7 +12,8 @@ import { DebugService } from '../servicios/debug.service'
 })
 export class CategoriasComponent implements OnInit {
   categorias: Categoria[];
-  constructor(private servicio: CategoriasService, private DebugService: DebugService) { }
+  categoria_select: number;
+  constructor(private servicio: CategoriasService, private DebugService: DebugService, private Posteo: PosteoComponent, private servicioPosteos: PosteoService) { }
 
   ngOnInit() {
     this.getCategoria();
@@ -19,9 +22,12 @@ export class CategoriasComponent implements OnInit {
   getCategoria(): void {
     this.servicio.getCategoria()
       .subscribe(categorias => this.categorias = categorias);
-    console.log(this.categorias);
     this.Debug("Servicio Categorias OK!");
 
+  }
+
+  CategoriaSelect(event: any) {
+    this.categoria_select = event.target.value
   }
   Debug(message: string) {
     this.DebugService.add(`DebugService: ${message}`);

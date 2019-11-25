@@ -25,15 +25,15 @@ module.exports = function(sequelize, DataTypes) {
       field: "categoria"
 
     },
-    createdAt:{
+    created_at:{
       type: DataTypes.DATE,
       field: "created_at"
     },
-    updatedAt:{
+    update_at:{
       type: DataTypes.DATE,
-      field: "updated_at"
+      field: "update_at"
     }
-  }, { freezeTableName: true,
+  }, { freezeTableName: true, timestamps: false,
   tableName: 'posteo'});
 
   posteo.associate = (models) => {

@@ -16,14 +16,16 @@ module.exports = function(sequelize, DataTypes) {
     comentario_padre:{
         type : DataTypes.INTEGER
     },
-    usuario:{
-      type : DataTypes.INTEGER
+    usuarioId:{
+      type : DataTypes.INTEGER,
+      field: "usuario"
     },
     titulo:{
       type : DataTypes.STRING
     },
-    posteo:{
-      type : DataTypes.INTEGER
+    posteoId:{
+      type : DataTypes.INTEGER,
+      field: "posteo"
     },
     createdAt:{
       type: DataTypes.DATE,
@@ -31,12 +33,17 @@ module.exports = function(sequelize, DataTypes) {
     },
     updatedAt:{
       type: DataTypes.DATE,
-      field: "updated_at"
+      field: "update_at"
     }
-  }, { freezeTableName: true,
+  }, { freezeTableName: true, timestamps: false,
   tableName: 'comentario'});
 
-
+  comentario.associate = (models) => {
+    // associations can be defined here
+    comentario.hasOne(models.usuario, { sourceKey: 'usuarioId' ,foreignKey: 'id_usuario' });
+    comentario.hasOne(models.posteo, { sourceKey: 'posteoId' ,foreignKey: 'id_posteo' });
+    comentario.hasOne(models.comentario, { sourceKey: 'comentario_padre' ,foreignKey: 'id_comentario' });
+};
 
 
 //Tarjeta.removeAttribute('id');

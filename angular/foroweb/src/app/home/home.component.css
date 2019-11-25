@@ -1,26 +1,24 @@
-.categorias{
+/*.categorias{
     float: right;
     position: relative;
-    width: 10%;
+    width: 15%;
     height: 100%;
-    background-color: seagreen;
-}
+}*/
 .usuario{
     float: center;
     margin: 0px;
     width: 10%;
     height: 100%;
-    background-color: skyblue;
 }
+/*
 .posteos{
     float: left;
-    background-color: springgreen;
     position: relative;
     height: 100%;
     width: 80%;
     left: 10%;
     top: 100%;
-}
+}*/
 .home{
     height: auto;
 }

@@ -5,8 +5,8 @@ module.exports = {
                        "host": "localhost",
                        "database": "skereee",
                        "username": "root",
-                       "password": "",
-                       "dialect": "mysql",
+                       "password": "boca1512",
+                       "dialect": "mysql"
                        //"logging":  true
                      }
 

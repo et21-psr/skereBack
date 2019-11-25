@@ -1,13 +1,18 @@
-<div class="card panel-categoria">
-    <div class="card-header text-center">
-        <h4>Categorias: </h4>
-    </div>
-    <div class="card-body relleno">
-        <ul>
-            <input type="radio" name="filtro" id="filtro" value="0" checked>Todas
-        </ul>
-        <ul *ngFor="let Categoria of categorias">
-            <input type="radio" id="filtro" name="filtro" value="{{Categoria.id_categoria}}">{{Categoria.nombre}}
-        </ul>
+<div class="posteos">
+    <app-posteo [id_categoria]="categoria_select" [categorias]="categorias"></app-posteo>
+</div>
+<div class="categorias">
+    <div class="card panel-categoria">
+        <div class="card-header text-center">
+            <h4>Categorias: </h4>
+        </div>
+        <div class="card-body relleno">
+            <ul>
+                <input type="radio" name="filtro" id="filtro" value="" checked (change)="CategoriaSelect($event)">Todas
+            </ul>
+            <ul *ngFor="let Categoria of categorias">
+                <input type="radio" id="filtro" name="filtro" value="{{Categoria.id_categoria}}" (change)="CategoriaSelect($event)" >{{Categoria.nombre}}
+            </ul>
+        </div>
     </div>
 </div>

@@ -1,0 +1,12 @@
+<div class="all">
+    <div class="card" *ngFor="let Comentario of comentarios">
+        <div class="card-header">
+            <h5 class="card-title">{{Comentario.titulo}}</h5>
+            <span class="hora"><a href="">{{Comentairo.createdAt}}</a></span>
+            <span class="usuario"><a href="">{{Comentario.usuario.email}}</a></span>
+        </div>
+        <div class="card-body">
+            <p class="card-text">{{Comentario.texto}}</p>
+        </div>
+    </div>
+</div>

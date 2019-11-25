@@ -4,7 +4,11 @@ var models = require("./../mysql");
 /* GET users listing. */
 router.get('/', function(req, res, next) {
 
-  models.comentario.findAll().then(result => {
+  models.comentario.findAll({
+    include: [
+    {model:models.usuario}
+
+  ]}).then(result => {
     res.status(200).jsonp(result);
 
   })
@@ -17,7 +21,10 @@ router.get('/:id', function(req, res, next){
   models.comentario.findOne({
     where: {
       id_comentario: id
-    }
+    },
+    include: [
+      {model:models.usuario}
+    ]
   }).then(result => {
     if(result== null){
       res.status(200).jsonp("no existe");
@@ -47,5 +54,23 @@ router.post('/', function(req, res, next){
     res.status(200).jsonp({status:true , response:"se creo con exito"});
   })
 
+});
+
+//Obtener por id de posteo
+router.get('/posteo/:id', function(req, res, next){
+
+  let id = req.params.id;
+  models.comentario.findOne({
+    include: [
+              {model:models.usuario}],
+    where: {
+      posteo: id
+    }
+  }).then(result => {
+    if(result== null){
+      res.status(200).jsonp("no existe");
+    }
+    res.status(200).jsonp(result);
+  })
 });
 module.exports = router;

@@ -10,9 +10,9 @@
     "cors": "^2.8.5",
     "debug": "~2.6.9",
     "express": "~4.16.1",
-    "mariadb": "^2.1.0",
+    "mariadb": "^2.1.3",
     "morgan": "~1.9.1",
-    "mysql2": "^1.6.5",
-    "sequelize": "^5.12.3"
+    "mysql2": "^1.7.0",
+    "sequelize": "^5.21.2"
   }
 }
