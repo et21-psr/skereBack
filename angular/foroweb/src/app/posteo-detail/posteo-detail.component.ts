@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Location } from '@angular/common';
 import { PosteoService } from '../servicios/posteo.service';
 import { Posteo } from '../Clases/Clases';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-posteo-detail',
@@ -27,4 +28,10 @@ export class PosteoDetailComponent implements OnInit {
     this.posteoService.getPosteoid(id)
       .subscribe(posteo => this.posteo = posteo);
   }
+
+  fecha(a: string) {
+    a = moment.utc(a).local().format('HH:mm:ss DD/MM/YYYY');
+    a = moment().startOf('hour').fromNow();
+    return a;
+}
 }

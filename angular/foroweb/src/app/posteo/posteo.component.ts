@@ -5,6 +5,7 @@ import { PosteoService } from '../servicios/posteo.service';
 import { Injectable } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs';
+import * as moment from 'moment';
 
 @Injectable({
   providedIn: 'root'
@@ -32,8 +33,6 @@ export class PosteoComponent implements OnInit, OnChanges {
   getPosteo(id): void {
     this.servicio.getPosteoCategoria(id)
         .subscribe(posteos => this.posteos = posteos);
-    this.Debug("Servicio Posteos OK!");
-    
   }
   onCreate(form):void{
     this.crearposteo = form.value; 
@@ -42,8 +41,11 @@ export class PosteoComponent implements OnInit, OnChanges {
   registrado(){
     return localStorage.getItem("IDUSUARIO");
   }
-  Debug(message: string){
-    this.DebugService.add(`DebugService: ${message}`);
-  }
+
+  fecha(a: string) {
+    a = moment.utc(a).local().format('HH:mm:ss DD/MM/YYYY');
+    a = moment().startOf('hour').fromNow();
+    return a;
+}
 
 }

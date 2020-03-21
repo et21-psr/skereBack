@@ -2,7 +2,7 @@
     <div class="card" *ngFor="let Comentario of comentarios">
         <div class="card-header">
             <h5 class="card-title">{{Comentario.titulo}}</h5>
-            <span class="hora"><a href="">{{Comentairo.createdAt}}</a></span>
+            <span class="hora"><a href="/comentario/{{Comentario.id_comentario}}">{{fecha(Comentario.createdAt)}}</a></span>
             <span class="usuario"><a href="">{{Comentario.usuario.email}}</a></span>
         </div>
         <div class="card-body">

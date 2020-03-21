@@ -24,7 +24,7 @@
     <div class="card" *ngFor="let Posteo of posteos">
         <div class="card-header">
             <h5 class="card-title">{{Posteo.titulo}}</h5>
-            <span class="hora"><a routerLink="/posteo/{{Posteo.id_posteo}}">{{Posteo.created_at}}</a></span>
+            <span class="hora"><a routerLink="/posteo/{{Posteo.id_posteo}}">{{fecha(Posteo.created_at)}}</a></span>
             <span class="usuario"><a href="">{{Posteo.usuario.email}}</a></span>
         </div>
         <div class="card-body">

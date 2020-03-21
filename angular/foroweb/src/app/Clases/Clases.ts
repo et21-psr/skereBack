@@ -1,3 +1,6 @@
+import * as moment from 'moment';
+
+
 export class Categoria {
     id_categoria: number;
     categoria_padre: number;

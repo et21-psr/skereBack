@@ -11,6 +11,7 @@ import { DebugService } from './debug.service';
 export class ComentarioService {
   Url = 'http://localhost:3000/comentario/';
   Url2 = 'http://localhost:3000/comentario/posteo';
+  Url3 = 'http://localhost:3000/comentario/comentario_padre';
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -27,6 +28,15 @@ export class ComentarioService {
     else{return this.http.get<Comentario[]>(this.Url);}
   }
 
+  getComentarioPadre(id: string): Observable<Comentario[]> {
+    if(id){
+    const url = `${this.Url3}/${id}`;
+    return this.http.get<Comentario[]>(url).pipe(
+      tap(_ => this.log(`fetched comentairo id=${id}`)),
+      catchError(this.handleError<Comentario[]>(`getComentario id=${id}`))
+    );}
+    else{return this.http.get<Comentario[]>(this.Url);}
+  }
 
   getComentarioid(id: string): Observable<Comentario> {
     const url = `${this.Url}/${id}`;

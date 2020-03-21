@@ -19,6 +19,7 @@ import { LoginComponent } from './login/login.component';
 import { CreateUserComponent } from './create-user/create-user.component';
 import { AuthserviceService } from './servicios/authservice.service';
 import {FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { ComentarioPadreComponent } from './comentario-padre/comentario-padre.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -33,7 +34,8 @@ import {FormsModule, ReactiveFormsModule } from '@angular/forms';
     ComentarioDetailComponent,
     PosteoSearchComponent,
     LoginComponent,
-    CreateUserComponent
+    CreateUserComponent,
+    ComentarioPadreComponent
   ],
   imports: [
     BrowserModule,

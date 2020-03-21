@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { ComentarioService } from '../servicios/comentario.service';
 import { Comentario } from '../Clases/Clases';
+import * as moment from 'moment';
 
 @Component({
   selector: 'app-comentario-detail',
@@ -25,4 +26,9 @@ export class ComentarioDetailComponent implements OnInit {
     this.comentarioService.getComentarioid(id)
       .subscribe(comentario => this.comentario = comentario);
   }
+  fecha(a: string) {
+    a = moment.utc(a).local().format('HH:mm:ss DD/MM/YYYY');
+    a = moment().startOf('hour').fromNow();
+    return a;
+}
 }
